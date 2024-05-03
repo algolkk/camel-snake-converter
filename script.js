@@ -66,15 +66,29 @@ $(document).ready(function () {
         copyToClipboard("#pascal");
     });
 
+    /**
+     * Toastify
+     */
     function copyToClipboard(sourceId) {
         var textToCopy = $(sourceId).text();
         navigator.clipboard.writeText(textToCopy).then(
             function () {
-                $("#message").text("Copied");
+                showToast("Copied", "success");
             },
             function (err) {
-                $("#message").text("Error");
+                showToast("Error", "error");
             }
         );
+    }
+
+    function showToast(message, type) {
+        Toastify({
+            text: message,
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: type === "success" ? "#20c997" : "#dc3545",
+        }).showToast();
     }
 });
