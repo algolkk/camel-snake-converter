@@ -2,8 +2,8 @@ $(document).ready(function () {
     /**
      * Convert
      */
-    $("#value").on("change", function () {
-        var text = $(this).val();
+    $("#convert").on("click", function () {
+        var text = $("#value").val();
         var caseType = detectCaseType(text);
 
         $("#camel").text(convert2CamelCase(text, caseType));
