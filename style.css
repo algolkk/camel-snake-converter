@@ -1,3 +1,7 @@
 .material-symbols-outlined {
     cursor: pointer;
 }
+
+.material-symbols-outlined:hover {
+    opacity: 0.6;
+}

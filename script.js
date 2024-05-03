@@ -47,4 +47,28 @@ $(document).ready(function () {
             return "unknown";
         }
     }
+
+    $("#copyCamel").on("click", function () {
+        copyToClipboard("#camel");
+    });
+
+    $("#copySnake").on("click", function () {
+        copyToClipboard("#snake");
+    });
+
+    $("#copyPascal").on("click", function () {
+        copyToClipboard("#pascal");
+    });
+
+    function copyToClipboard(sourceId) {
+        var textToCopy = $(sourceId).text();
+        navigator.clipboard.writeText(textToCopy).then(
+            function () {
+                $("#message").text("Copied");
+            },
+            function (err) {
+                $("#message").text("Error");
+            }
+        );
+    }
 });
