@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    /**
+     * Convert
+     */
     $("#value").on("change", function () {
         var text = $(this).val();
         var caseType = detectCaseType(text);
@@ -48,6 +51,9 @@ $(document).ready(function () {
         }
     }
 
+    /**
+     * Copy to clipboard
+     */
     $("#copyCamel").on("click", function () {
         copyToClipboard("#camel");
     });
