@@ -73,10 +73,10 @@ $(document).ready(function () {
         var textToCopy = $(sourceId).text();
         navigator.clipboard.writeText(textToCopy).then(
             function () {
-                showToast("Copied", "success");
+                showToast("Copied!", "success");
             },
             function (err) {
-                showToast("Error", "error");
+                showToast("Error!", "error");
             }
         );
     }
